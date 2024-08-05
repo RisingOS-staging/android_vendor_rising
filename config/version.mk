@@ -6,40 +6,15 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/rising/version
 
 RISING_FLAVOR := UDC
-RISING_VERSION := 4.2
-RISING_CODENAME := Kailash
-RISING_RELEASE_TYPE := RELEASE
+RISING_VERSION := 5.x
+RISING_CODENAME := null
+RISING_RELEASE_TYPE := PRIVATE
 RISING_CODE := $(RISING_VERSION)
 
 RISING_BUILD_DATE := $(shell date -u +%Y%m%d)
-
+RISING_BUILDTYPE ?= MINKAN
 CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
-MAINTAINER_LIST := $(shell cat vendor/risingOTA/risingOS.maintainers)
-DEVICE_LIST := $(shell cat vendor/risingOTA/risingOS.devices)
-
-ifeq ($(filter $(CURRENT_DEVICE),$(DEVICE_LIST)), $(CURRENT_DEVICE))
-    ifdef RISING_MAINTAINER
-        ifneq ($(filter $(RISING_MAINTAINER),$(MAINTAINER_LIST)),)
-            RISING_BUILDTYPE := OFFICIAL
-        else
-            RISING_BUILDTYPE := UNOFFICIAL
-        endif
-    else
-        RISING_BUILDTYPE := UNOFFICIAL
-    endif
-else
-    RISING_BUILDTYPE := COMMUNITY
-endif
-
-ifeq ($(WITH_GMS), true)
-	ifeq ($(TARGET_CORE_GMS), true)
-    	RISING_PACKAGE_TYPE ?= CORE
-	else 
-    	RISING_PACKAGE_TYPE ?= GAPPS
-	endif
-else
-    RISING_PACKAGE_TYPE ?= VANILLA
-endif
+RISING_PACKAGE_TYPE ?= GAPPS
 
 # Build version
 RISING_BUILD_VERSION := $(RISING_VERSION)-$(RISING_RELEASE_TYPE)-$(RISING_BUILD_DATE)-$(RISING_PACKAGE_TYPE)-$(RISING_BUILDTYPE)-$(CURRENT_DEVICE)
