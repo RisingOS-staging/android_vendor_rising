@@ -22,11 +22,12 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/rising/overlays
 
 PRODUCT_PACKAGES += \
-    DeviceIntelligenceNetworkPrebuilt-v.U.14.playstore \
+    DeviceIntelligenceNetworkPrebuilt-U.21_playstore_astrea_20240222.00_RC01 \
     SettingsIntelligenceGooglePrebuilt  \
-    PrebuiltDeskClockGoogle \
-    CalculatorGooglePrebuilt \
-    MarkupGoogle
+    PrebuiltDeskClockGoogle_76003530 \
+    CalculatorGooglePrebuilt_85005407 \
+    MarkupGoogle_v2 \
+    DevicePersonalizationPrebuiltPixel2024-U.21_P24_aiai_20240327.00_RC01
     
 TARGET_PREBUILT_GOOGLE_CAMERA ?= false
 ifeq ($(strip $(TARGET_PREBUILT_GOOGLE_CAMERA)),true)
@@ -40,19 +41,9 @@ PRODUCT_PACKAGES += \
 endif
 
 CURRENT_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
-ifneq ($(filter $(CURRENT_DEVICE), cheetah husky panther shiba lynx akita),)
-TARGET_ASI := ASI_2022
-PRODUCT_PACKAGES += \
-    DevicePersonalizationPixel2022
-else
-TARGET_ASI := ASI_2020
-PRODUCT_PACKAGES += \
-    DevicePersonalizationPixel2020
-endif
-
 ifneq ($(filter $(CURRENT_DEVICE), husky shiba akita),)
 PRODUCT_PACKAGES += \
-    HealthIntelligenceStubPrebuilt
+    HealthIntelligencePrebuilt-1762
 endif
 
 PRODUCT_COPY_FILES += \
