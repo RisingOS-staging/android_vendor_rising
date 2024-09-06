@@ -112,6 +112,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.pihooks_mainline_DEVICE?=caiman \
     persist.sys.pihooks_mainline_MANUFACTURER?=Google \
     persist.sys.pihooks_mainline_PRODUCT?=caiman \
+    persist.sys.pihooks_mainline_ID?=AD1A.240530.047.U1 \
     ro.product.model_for_attestation?=Pixel 9 Pro \
     ro.product.brand_for_attestation?=google \
     ro.product.name_for_attestation?=caiman \
