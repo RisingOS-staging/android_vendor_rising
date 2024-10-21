@@ -1,6 +1,9 @@
 -include vendor/pixel-framework/config.mk
 -include vendor/addons/config.mk
+WITH_GMS ?= false
+ifeq ($(WITH_GMS),true)
 -include vendor/gms/products/gms.mk
+endif
 include vendor/rising/config/properties.mk
 include vendor/rising/config/packages.mk
 include vendor/rising/config/vars.mk

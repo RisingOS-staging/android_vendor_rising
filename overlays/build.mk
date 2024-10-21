@@ -25,5 +25,33 @@ PRODUCT_PACKAGES += \
     AndroidOverlay \
     Launcher3Overlay \
     SettingsOverlay \
-    SystemUIOverlay \
-    NothingLauncher3Overlay
+    SystemUIOverlay
+
+ifeq ($(WITH_GMS),true)
+# System overlays
+PRODUCT_PACKAGES += \
+    GoogleAndroidOverlay \
+    GoogleSettingsOverlay \
+    GoogleTelecommOverlay \
+    PixelAM \
+    PixelPrintService \
+    PixelContactsProvider \
+    GoogleConfigOverlay \
+    GoogleHealthConnectOverlay \
+    GoogleWebViewOverlay \
+    ManagedProvisioningPixelOverlay \
+    PixelConfigOverlay2018 \
+    PixelConfigOverlay2019 \
+    PixelConfigOverlay2019Midyear \
+    PixelConfigOverlayCommon \
+    SettingsGoogleOverlay2021AndNewer \
+    PixelSettings \
+    SettingsHuskyOverlay \
+    PixelSettingsProvider \
+    GoogleStorageManagerOverlay \
+    SystemUIGXOverlay \
+    PixelSystemUI \
+    PixelTeleService \
+    PixelTelecom \
+    Pixelframework
+endif

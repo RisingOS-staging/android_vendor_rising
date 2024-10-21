@@ -8,8 +8,6 @@
     <string name="config_headlineFontFeatureSettings">ss03</string>
     <!-- The list of components which should be automatically disabled for all devices. -->
 
-    <string name="config_systemAmbientAudioIntelligence">com.google.android.as</string>
-
     <!-- Controls the navigation bar interaction mode:
          0: 3 button mode (back, home, overview buttons)
          1: 2 button mode (back, home buttons + swipe up for overview)
@@ -18,14 +16,6 @@
     
     <bool name="config_supportSmartPixels">true</bool>
     <bool name="config_pocketModeSupported">false</bool>
-
-    <!-- The package name for the system's wallpaper effects generation service.
-    This service returns wallpaper effects results.
-    This service must be trusted, as it can be activated without explicit consent of the user.
-    If no service with the specified name exists on the device, wallpaper effects
-    generation service will be disabled.
-    Example: "com.android.intelligence/.WallpaperEffectsGenerationService" -->
-    <string name="config_defaultWallpaperEffectsGenerationService" translatable="false">com.google.android.as/com.google.android.apps.miphone.aiai.app.wallpapereffects.AiAiWallpaperEffectsGenerationService</string>
 
      <bool name="config_appCompatUserAppAspectRatioSettingsIsEnabled">true</bool>
      <bool name="config_appCompatUserAppAspectRatioFullscreenIsEnabled">true</bool>
